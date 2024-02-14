@@ -50,7 +50,7 @@ exports.resetPasswordToken = async (req, res) => {
 
 exports.resetPassword = async (req, res) => {
   try {
-    const { password, confirmPassword, token } = req.body
+    const { password, confirmPassword,token } = req.body
 
     if (confirmPassword !== password) {
       return res.json({
@@ -58,7 +58,7 @@ exports.resetPassword = async (req, res) => {
         message: "Password and Confirm Password Does not Match",
       })
     }
-    const userDetails = await User.findOne({ token: token })
+    const userDetails = await User.findOne({token:token})
     if (!userDetails) {
       return res.json({
         success: false,
@@ -73,7 +73,7 @@ exports.resetPassword = async (req, res) => {
     }
     const encryptedPassword = await bcrypt.hash(password, 10)
     await User.findOneAndUpdate(
-      { token: token },
+      {token:token },
       { password: encryptedPassword },
       { new: true }
     )
