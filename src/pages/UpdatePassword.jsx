@@ -30,7 +30,8 @@ function UpdatePassword() {
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
-    const token = location.pathname.split("/").at(-1)
+    // const token = location.pathname.split("/").at(-1)
+    const token = location.pathname.split("/").slice(-1)[0]; 
     dispatch(resetPassword(password, confirmPassword, token, navigate))
   }
 
