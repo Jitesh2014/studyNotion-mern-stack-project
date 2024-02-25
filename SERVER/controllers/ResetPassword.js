@@ -58,7 +58,10 @@ exports.resetPassword = async (req, res) => {
         message: "Password and Confirm Password Does not Match",
       })
     }
+  
     const userDetails = await User.findOne({token:token})
+    console.log("USER TOKEN : ",userDetails.token)
+     
     if (!userDetails) {
       return res.json({
         success: false,
