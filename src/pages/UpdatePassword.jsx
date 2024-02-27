@@ -31,10 +31,10 @@ function UpdatePassword() {
   const handleOnSubmit = (e) => {
     e.preventDefault()
     // const token = location.pathname.split("/").at(-1)
-    const token = location.pathname.split("/").slice(-1)[0]; 
+    const token = location.pathname.split("/").slice(-1)[0];
+    console.log('Extracted Token:', token);
     dispatch(resetPassword(password, confirmPassword, token, navigate))
   }
-
   return (
     <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
       {loading ? (
