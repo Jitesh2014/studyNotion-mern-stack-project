@@ -44,7 +44,7 @@ const ExploreMore = () => {
           return (
             <div
               className={` text-[16px] flex flex-row items-center gap-2 ${
-                currentTab === ele
+                currentTab === ele 
                   ? "bg-richblack-900 text-richblack-5 font-medium"
                   : "text-richblack-200"
               } px-7 py-[7px] rounded-full transition-all duration-200 cursor-pointer hover:bg-richblack-900 hover:text-richblack-5`}
